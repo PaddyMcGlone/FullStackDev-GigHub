@@ -1,0 +1,224 @@
+﻿body {
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.voffset  { margin-top: 2px;   }
+.voffset1 { margin-top: 4px;  }
+.voffset2 { margin-top: 8px;  }
+.voffset3 { margin-top: 10px; }
+.voffset4 { margin-top: 20px; }
+.voffset5 { margin-top: 40px; }
+
+
+/* Bootstrap overrides */
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('fonts/glyphicons-halflings-regular.eot');
+  src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+.popover {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+span.field-validation-error {
+    color: red;
+    font-weight: 400;
+}
+
+.navbar-inverse {
+    background-color: #FF4342;
+    border-color: #ff4342;
+
+    .navbar-nav > li > a {
+        color: #fff;
+    }
+
+    .navbar-brand {
+        color: #fff;
+    }
+
+    .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+        background-color: rgba(232, 49, 48, 0.73);
+    }
+
+    .Notifications {
+        position: relative
+    }
+
+    .Notifications .badge {
+        position: absolute;
+        top: 9px;
+        right: -1px;
+        background: #a80a0a;
+    }
+
+    .navbar-nav > .dropdown > a .caret {
+        border-top-color: #fff;
+        border-bottom-color: #fff;
+    }
+}
+
+.dropdown-menu {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.body {
+    font-size: 17px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    font-size: 17px;
+    height: 44px;
+    -ms-border-radius: 9px;
+    border-radius: 9px;    
+    -webkit-transition: border-color ease-in-out 0s, box-shadow ease-in-out 0s;
+    transition: border-color ease-in-out 0s, box-shadow ease-in-out 0s;
+}
+
+.form-control :focus {
+    border-color: #428bca;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.btn {
+    -ms-border-radius: 9px;
+    border-radius: 9px;
+    /*font-size: 17px;
+    padding: 7px 20px;*/
+}
+
+/* Site-level overrides */
+
+#GigSearch {
+    width: 300px;
+
+    :focus {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+.gigs {
+    list-style: none;
+
+    > li {
+        position: relative;
+        margin-bottom: 30px;
+
+        .date {
+            background: red;
+            color: white;
+            text-align: center;
+            width: 60px;       
+            -ms-border-radius: 8px;
+            border-radius: 8px;
+        }
+
+        .month {
+            padding: 2px 6px;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold; 
+        }
+
+        .day {
+            background: #f7f7f7;
+            color: black;
+            font-size: 20px;
+        }
+
+        .details {
+            position: absolute;
+            top: 0px;
+            left: 70px;
+
+            .artist {
+                font-weight: bold;
+                display: block;
+            }
+        }
+
+        .actions {
+            font-size: 14px;
+            display: None;
+        }
+
+        :hover .actions {
+            display: block;
+        }
+     }
+}
+
+.popover-notifications {
+    .popover-content {
+        padding: 0;
+    }
+
+    .ul.notifications {
+        list-style: none;
+        padding: 0;
+
+        > li {
+            border-bottom: 1px solid #ddd;
+            padding: 5px;
+        }
+
+        > li:last-child {
+            border-bottom: none;
+        }
+
+        .highlight {
+            font-weight: bold;
+        }
+    }
+}
+ 
+

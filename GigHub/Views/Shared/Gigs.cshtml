@@ -1,0 +1,70 @@
+﻿@model GigHub.Core.ViewModels.GigsViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>@Model.Heading</h1>
+
+@using (@Html.BeginForm("Search", "Gigs"))
+{
+    <div class="form-group">
+        <div id="GigSearch" class="input-group">
+            @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control", PlaceHolder = "Search by artist, genre.." })
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-search"></i>
+            </span>
+        </div>
+    </div>
+}
+
+<ul class="gigs voffset5">
+    @foreach (var gig in Model.UpComingGigs)
+    {
+        <li>
+            <div class="date">
+                <div class="month">
+                    @gig.DateTime.ToString("MMM")
+                </div>
+                <div class="day">
+                    @gig.DateTime.ToString("d ")
+                </div>
+            </div>
+            <div class="details">
+                <span class="artist">
+                   <a href="@Url.Action("Details", "Gigs", new {@gig.Id})">@gig.Artist.Name</a>  
+
+                    @if (@gig.IsCanceled)
+                    {
+                        <span class="label label-warning">Canceled</span>
+                    }                    
+                </span>
+                <span class="genre">
+                    @gig.Genre.Name                    
+                </span>
+                <span id="going">
+                    @if (Model.ShowActions && !@gig.IsCanceled)
+                    {
+                        <button data-gig-id="@gig.Id"
+                                class="btn
+                                @(Model.Attendances.Contains(@gig.Id)
+                                      ? "btn-success" : "btn-default")
+                                btn-sm pull-right js-toogle-attendance">
+                            Going?
+                        </button>
+                    }
+                </span>
+            </div>
+        </li>
+    }
+</ul>
+
+@section scripts
+{
+    <script>
+        $(document)
+            .ready(function () {
+                gigsController.init();
+            });
+    </script>
+}
